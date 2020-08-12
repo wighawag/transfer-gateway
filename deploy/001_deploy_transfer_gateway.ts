@@ -9,16 +9,10 @@ const func: DeployFunction = async function (bre: BuidlerRuntimeEnvironment) {
 
   const { deployer } = await getNamedAccounts();
 
-  const ALibrary = await deployments.get("ALibrary");
-
-  await deploy("AContract", {
+  await deploy("ERC20TransferGateway", {
     from: deployer,
     log: true,
-    libraries: {
-      ALibrary: ALibrary.address,
-    },
   });
 };
 export default func;
-func.tags = ["AContract"];
-func.dependencies = ["ALibrary"];
+func.tags = ["ERC20TransferGateway"];

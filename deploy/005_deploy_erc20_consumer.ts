@@ -9,13 +9,20 @@ const func: DeployFunction = async function (bre: BuidlerRuntimeEnvironment) {
 
   const { deployer } = await getNamedAccounts();
 
-  const Greeter = await deployments.get("Greeter");
+  const erc20Token = await deployments.get("ERC20Token");
+  const erc20TransferGateway = await deployments.get("ERC20TransferGateway");
 
-  await deploy("Example", {
+  await deploy("ERC20Consumer", {
     from: deployer,
-    proxy: "postUpgrade",
-    args: [Greeter.address],
+    args: [
+      erc20TransferGateway.address,
+      erc20Token.address,
+      "500000000000000000",
+    ],
     log: true,
   });
 };
+
 export default func;
+func.tags = ["ERC20Consumer"];
+func.dependencies = ["ERC20TransferGateway", "ERC20Token"];

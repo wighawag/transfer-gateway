@@ -1,9 +1,9 @@
 {
   "devDependencies": {
-    "@ethereum-waffle/chai": "^3.0.1",
+    "@ethereum-waffle/chai": "^3.0.2",
     "@nomiclabs/buidler": "^1.3.8",
     "@types/chai": "^4.2.11",
-    "@types/mocha": "^7.0.2",
+    "@types/mocha": "^8.0.2",
     "@types/node": "^13.11.0",
     "buidler-deploy": "^0.5.10",
     "buidler-ethers-v5": "^0.2.2",
@@ -17,10 +17,11 @@
   },
   "scripts": {
     "postinstall": "node ./.setup.js",
-    "test": "buidler test",
+    "test": "buidler compile && mocha --bail --recursive test",
     "coverage": "buidler --network coverage coverage",
     "rinkeby:run": "cross-env BUIDLER_NETWORK=rinkeby ts-node --files",
     "rinkeby:deploy": "buidler --network rinkeby deploy",
+    "void:deploy": "buidler deploy",
     "kovan:deploy": "buidler --network 42 deploy",
     "staging:deploy": "buidler --network staging deploy",
     "dev": "buidler node --reset --watch --export contractsInfo.json"

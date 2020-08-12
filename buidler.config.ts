@@ -27,6 +27,15 @@ if (mnemonic) {
       balance: "1000000000000000000000",
     });
   }
+} else {
+  buidlerEvmAccounts = [];
+  for (let i = 0; i < 10; i++) {
+    const wallet = Wallet.createRandom();
+    buidlerEvmAccounts.push({
+      privateKey: wallet.privateKey,
+      balance: "1000000000000000000000",
+    });
+  }
 }
 
 const config: BuidlerConfig = {
@@ -36,10 +45,11 @@ const config: BuidlerConfig = {
   namedAccounts: {
     deployer: 0,
     admin: "0x5B9d721f482E60efA99e555Cb59c7DBF4Df15Dc7",
+    others: "from:5",
   },
   networks: {
     coverage: {
-      url: "http://localhost:5458"
+      url: "http://localhost:5458",
     },
     buidlerevm: {
       accounts: buidlerEvmAccounts,
@@ -53,17 +63,17 @@ const config: BuidlerConfig = {
       accounts,
     },
     42: {
-      url: 'https://kovan.infura.io/v3/' + process.env.INFURA_TOKEN,
-      accounts
+      url: "https://kovan.infura.io/v3/" + process.env.INFURA_TOKEN,
+      accounts,
     },
     staging: {
-      url: 'https://goerli.infura.io/v3/' + process.env.INFURA_TOKEN,
-      accounts
-    }
+      url: "https://goerli.infura.io/v3/" + process.env.INFURA_TOKEN,
+      accounts,
+    },
   },
   paths: {
     sources: "src",
-  }
+  },
 };
 
 export default config;

@@ -18,29 +18,29 @@
   resolved "https://registry.yarnpkg.com/@ensdomains/resolver/-/resolver-0.2.4.tgz#c10fe28bf5efbf49bff4666d909aed0265efbc89"
   integrity sha512-bvaTH34PMCbv6anRa9I/0zjLJgY4EuznbEMgbV77JBCQ9KNC46rzi0avuxpOfu+xDjPEtSFGqVEOr5GlUSGudA==
 
-"@ethereum-waffle/chai@^3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@ethereum-waffle/chai/-/chai-3.0.1.tgz#0ca13f517a9689d485ad9f83ca7188ea12c154cc"
-  integrity sha512-E8u7eGSXEO16Kv3F1cbkmYAobIEUQ1qMNg8uxiUBPLc/LLIKjS8n3NuUmAy/pRpemPzQcNWgNyjeF2OCg/JLWw==
+"@ethereum-waffle/chai@^3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@ethereum-waffle/chai/-/chai-3.0.2.tgz#5492398abbf2b64ec2524deac78777ee62d02d08"
+  integrity sha512-aXE6KqHmCX0aaSGqeaZP0EvhPou4Ii9g/x7u0oIuj7sYchDk09/TTeuMdFs4EKgdTc7nUpQSdpJ6GuO7pLoNbA==
   dependencies:
-    "@ethereum-waffle/provider" "^3.0.1"
+    "@ethereum-waffle/provider" "^3.0.2"
     ethers "^5.0.0"
 
-"@ethereum-waffle/ens@^3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@ethereum-waffle/ens/-/ens-3.0.1.tgz#74e989276273a1790586c0a9cfa16d7b993ed4dd"
-  integrity sha512-nylX5Pi3M5CQkvOMX/5uCO+2i7R7RZg+aCUyVsYP99IafG7/FxxA8OBZZ2L8vpag5QxN2Ed4P3UKGTok9YPKEA==
+"@ethereum-waffle/ens@^3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@ethereum-waffle/ens/-/ens-3.0.2.tgz#0ace2f5efbcba79a763697830bf16260c0bd7460"
+  integrity sha512-XkOVIbUvMt5hl6ZHgceqI7smWUercCV0LQtUjXgXPTUfONsB6JSPqAE2H6cc4sXqn82Q3cPThderLvT5QNTyRA==
   dependencies:
     "@ensdomains/ens" "^0.4.4"
     "@ensdomains/resolver" "^0.2.4"
     ethers "^5.0.1"
 
-"@ethereum-waffle/provider@^3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@ethereum-waffle/provider/-/provider-3.0.1.tgz#2e89e198433beb75d0a0d7fd45bab6af8125dd64"
-  integrity sha512-IoMFWgglaEmo2LC1/J2JM+uUGhF1YFIr2B+QksL36y1wa+UtpDPvCpnUNTSuVKS6J9t8uz/FhQdROzBdRX/aPg==
+"@ethereum-waffle/provider@^3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@ethereum-waffle/provider/-/provider-3.0.2.tgz#2416237ca97c1f7d8dfca990fe85c9f27d921f4d"
+  integrity sha512-jIbaW4mSBZmzIRUxBSuutwucdxXWOp5e3m16ds6PRnMBNd8civ9LwPM6RqwxC8pNTq/APMf6bFqLJo4UVW3PIg==
   dependencies:
-    "@ethereum-waffle/ens" "^3.0.1"
+    "@ethereum-waffle/ens" "^3.0.2"
     ethers "^5.0.1"
     ganache-core "^2.10.2"
 
@@ -682,10 +682,10 @@
   resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
   integrity sha512-tHq6qdbT9U1IRSGf14CL0pUlULksvY9OZ+5eEgl1N7t+OA3tGvNpxJCzuKQlsNgCVwbAs670L1vcVQi8j9HjnA==
 
-"@types/mocha@^7.0.2":
-  version "7.0.2"
-  resolved "https://registry.yarnpkg.com/@types/mocha/-/mocha-7.0.2.tgz#b17f16cf933597e10d6d78eae3251e692ce8b0ce"
-  integrity sha512-ZvO2tAcjmMi8V/5Z3JsyofMe3hasRcaw88cto5etSVMwVQfeivGAlEYmaQgceUSVYFofVjT+ioHsATjdWcFt1w==
+"@types/mocha@^8.0.2":
+  version "8.0.2"
+  resolved "https://registry.yarnpkg.com/@types/mocha/-/mocha-8.0.2.tgz#cdd160767c5a445bedef94ea8cfc8ab760fff42b"
+  integrity sha512-5cv8rmqT3KX9XtWDvSgGYfS4OwrKM2eei90GWLnTYz+AXRiBv5uYcKBjnkQ4katNvfYk3+o2bHGZUsDhdcoUyg==
 
 "@types/node@*", "@types/node@^13.11.0":
   version "13.11.0"
