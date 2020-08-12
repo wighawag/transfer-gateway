@@ -35,11 +35,7 @@ contract ERC20Consumer {
         uint256 length = data.length;
         assembly {
             transferSender := mload(sub(add(data, length), 0x0))
-        }
-        assembly {
             amount := mload(sub(add(data, length), 0x20))
-        }
-        assembly {
             token := mload(sub(add(data, length), 0x40))
         }
     }
