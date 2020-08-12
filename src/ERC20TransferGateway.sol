@@ -12,19 +12,7 @@ contract ERC20TransferGateway {
     ) external {
         address sender = msg.sender; // TODO use _msgSender() from MetaTransactionReceiver
         _transferERC20(sender, token, amount, to);
-        _call(sender, token, amount, to, to, callData);
-    }
-
-    function transferERC20AndCallTo(
-        ERC20 token,
-        uint256 amount,
-        address to,
-        address callTo,
-        bytes calldata callData
-    ) external {
-        address sender = msg.sender; // TODO use _msgSender() from MetaTransactionReceiver
-        _transferERC20(sender, token, amount, to);
-        _call(sender, token, amount, to, callTo, callData);
+        _call(sender, token, amount, to, callData);
     }
 
     //////////////////////////// INTERNAL /////////////////////////////
@@ -45,12 +33,11 @@ contract ERC20TransferGateway {
         ERC20 token,
         uint256 amount,
         address to,
-        address callTo,
         bytes memory callData
     ) internal {
-        (bool success, ) = callTo.call(
+        (bool success, ) = to.call(
             // append the transfer data with sender at the end (EIP-2771)
-            abi.encodePacked(callData, abi.encode(token, amount, to, sender))
+            abi.encodePacked(callData, abi.encode(token, amount, sender))
         );
         if (!success) {
             assembly {

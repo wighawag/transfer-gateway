@@ -7,15 +7,11 @@ contract ERC20Consumer {
     function purchase(uint256 id) external {
         address sender = msg.sender;
         if (sender == address(_erc20TransferGateway)) {
-            (
-                address token,
-                uint256 amount,
-                address to,
-                address transferSender
-            ) = _extract(msg.data);
+            (address token, uint256 amount, address transferSender) = _extract(
+                msg.data
+            );
             require(token == address(_token), "UNEXPECTED_ERC20_TOKEN");
             require(amount == _price, "UNEXPECTED_AMOUNT"); // Alternative: reimburse the diff but fails on less
-            require(to == address(this), "UNEPECTED_RECEIVER");
             sender = transferSender;
         } else {
             require(
@@ -33,7 +29,6 @@ contract ERC20Consumer {
         returns (
             address token,
             uint256 amount,
-            address to,
             address transferSender
         )
     {
@@ -42,13 +37,10 @@ contract ERC20Consumer {
             transferSender := mload(sub(add(data, length), 0x0))
         }
         assembly {
-            to := mload(sub(add(data, length), 0x20))
+            amount := mload(sub(add(data, length), 0x20))
         }
         assembly {
-            amount := mload(sub(add(data, length), 0x40))
-        }
-        assembly {
-            token := mload(sub(add(data, length), 0x60))
+            token := mload(sub(add(data, length), 0x40))
         }
     }
 
