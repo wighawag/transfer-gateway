@@ -1,0 +1,100 @@
+{
+  "abi": [
+    {
+      "inputs": [],
+      "name": "getNumber",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "v",
+          "type": "uint256"
+        }
+      ],
+      "name": "saveNumber",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "receipt": {
+    "to": null,
+    "from": "0x61c461EcC993aaDEB7e4b47E96d1B8cC37314B20",
+    "contractAddress": "0x1AC7F199069271503D4e757E91C7695deA6cB9E5",
+    "transactionIndex": 8,
+    "gasUsed": "96633",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0xf5e872e5539d19b8f9cc272d934576f1852d749a1c0f9ba2c7007d248139a57c",
+    "transactionHash": "0x8786f63aa96e9ffe63d9098c5ca8ba23e96b7986d1995e7686c02ea600ae9cd8",
+    "logs": [],
+    "blockNumber": 6946769,
+    "cumulativeGasUsed": "645124",
+    "status": 1,
+    "byzantium": true
+  },
+  "address": "0x1AC7F199069271503D4e757E91C7695deA6cB9E5",
+  "args": [],
+  "solcInputHash": "0x0ab2c8b7a20813daa8f649cdb78f8038d4c9e4003e616f82dba31eea15e69353",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.5+commit.f956cc89\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"getNumber\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"v\",\"type\":\"uint256\"}],\"name\":\"saveNumber\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"src/diamon_test/TestFacet.sol\":\"TestFacet\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"src/diamon_test/StorageLayout.sol\":{\"content\":\"pragma solidity 0.6.5;\\n\\ncontract StorageLayout {\\n    string internal _name;\\n    uint256 internal _value;\\n}\\n\",\"keccak256\":\"0x01c26ebcbb2d70637f123235468c455b1bb411c55604024256b7514d56d3f483\"},\"src/diamon_test/TestFacet.sol\":{\"content\":\"pragma solidity 0.6.5;\\n\\nimport \\\"./StorageLayout.sol\\\";\\n\\ncontract TestFacet is StorageLayout {\\n    function saveNumber(uint256 v) external {\\n        _value = v;\\n    }\\n\\n    function getNumber() external view returns (uint256) {\\n        return _value;\\n    }\\n}\\n\",\"keccak256\":\"0xd703bf4ffdd6fcb24f834802ddddbffe2cd4b510ea40868b3bfea395c5d34999\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060c88061001f6000396000f3fe6080604052348015600f57600080fd5b506004361060325760003560e01c8063f2c9ecd8146037578063f33ded7b146053575b600080fd5b603d607e565b6040518082815260200191505060405180910390f35b607c60048036036020811015606757600080fd5b81019080803590602001909291905050506088565b005b6000600154905090565b806001819055505056fea264697066735822122061303ac8a08ca80dec7dd98470400c5f71b05d38c0e5ae6b5624479aba72917a64736f6c63430006050033",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060325760003560e01c8063f2c9ecd8146037578063f33ded7b146053575b600080fd5b603d607e565b6040518082815260200191505060405180910390f35b607c60048036036020811015606757600080fd5b81019080803590602001909291905050506088565b005b6000600154905090565b806001819055505056fea264697066735822122061303ac8a08ca80dec7dd98470400c5f71b05d38c0e5ae6b5624479aba72917a64736f6c63430006050033",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 8520,
+        "contract": "src/diamon_test/TestFacet.sol:TestFacet",
+        "label": "_name",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_string_storage"
+      },
+      {
+        "astId": 8522,
+        "contract": "src/diamon_test/TestFacet.sol:TestFacet",
+        "label": "_value",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_uint256"
+      }
+    ],
+    "types": {
+      "t_string_storage": {
+        "encoding": "bytes",
+        "label": "string",
+        "numberOfBytes": "32"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  },
+  "gasEstimates": {
+    "creation": {
+      "codeDepositCost": "40000",
+      "executionCost": "93",
+      "totalCost": "40093"
+    },
+    "external": {
+      "getNumber()": "991",
+      "saveNumber(uint256)": "20242"
+    }
+  }
+}

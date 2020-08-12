@@ -1,0 +1,18 @@
+allow-uncaught: true
+# bail: true
+diff: true
+extension:
+  - js
+recursive: true
+reporter: spec
+require:
+  - "@nomiclabs/buidler/register"
+  - "ts-node/register"
+slow: 75
+spec: test/**/test*.ts # the positional arguments!
+timeout: 20000
+ui: bdd
+watch: false
+watch-files:
+  - "src/**/*.sol"
+  - "test/**/*.ts"

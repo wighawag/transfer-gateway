@@ -1,0 +1,13 @@
+coverage*
+#Buidler files
+cache/
+artifacts/
+
+node_modules/
+.env
+contractsInfo.json
+deployments/buidlerevm_*
+deployments/localhost_*
+
+.vscode/*
+!.vscode/settings.json.default
