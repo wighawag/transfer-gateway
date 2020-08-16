@@ -12,6 +12,7 @@ const func: DeployFunction = async function (bre: BuidlerRuntimeEnvironment) {
   await deploy("ERC20TransferGateway", {
     from: deployer,
     log: true,
+    useCreate2: true,
   });
 };
 export default func;

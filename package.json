@@ -5,7 +5,7 @@
     "@types/chai": "^4.2.11",
     "@types/mocha": "^8.0.2",
     "@types/node": "^13.11.0",
-    "buidler-deploy": "^0.5.10",
+    "buidler-deploy": "^0.5.16",
     "buidler-ethers-v5": "^0.2.2",
     "chai": "^4.2.0",
     "cross-env": "^7.0.2",
