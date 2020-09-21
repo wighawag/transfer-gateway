@@ -4,6 +4,7 @@ cache/
 artifacts/
 
 node_modules/
+!test/node_modules/
 .env
 contractsInfo.json
 deployments/buidlerevm_*
