@@ -2456,10 +2456,10 @@ buidler-deploy@^0.6.0-beta.29:
     match-all "^1.2.6"
     qs "^6.9.4"
 
-buidler-ethers-v5@^0.2.2:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/buidler-ethers-v5/-/buidler-ethers-v5-0.2.2.tgz#5fb1262f35b7c1f8bb3b425a9cadd16eb064ac32"
-  integrity sha512-pIxdJF9078RgHUw3NuBcgUuWXH76JsjcnMJJHJwZA7tV93kMY6M8B8oGONoxMpDmz8AcJig/kIqU6S+ZxGa+XQ==
+buidler-ethers-v5@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/buidler-ethers-v5/-/buidler-ethers-v5-0.2.3.tgz#3f896c58c07819e7970de53968461940c78e12e3"
+  integrity sha512-10qFSI+OvVgixFMFDl42puta3L0snEqjq0/nnVXvAFkxaywgTLDNeOu6qnF88GOPoUuYCa0rPPSMpb82mrRWcA==
 
 bytes@3.1.0:
   version "3.1.0"
