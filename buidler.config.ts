@@ -70,7 +70,7 @@ const config: BuidlerConfig = {
     },
   },
   paths: {
-    sources: 'src',
+    sources: 'solc_0.7',
   },
 };
 
