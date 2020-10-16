@@ -4,7 +4,7 @@ _Another way to solve the two step approve and transfer process_
 
 Transfer gateways are intermediary contract that make the transfer to the destination contract before calling the contract.
 
-They can be pre-approved globally from the ERC20 contract (see \_gateway in [src/Test/BaseERC20.sol](src/Test/BaseERC20.sol)) so ERC20 contract can benefit from it without requiring user confirmation.
+They can be pre-approved globally as immutable address from the ERC20 contract (see \_gateway in [solc_0.7/Test/BaseERC20.sol](solc_0.7/Test/BaseERC20.sol)) so ERC20 contract can benefit from it without requiring user confirmation.
 
 Alternatively for existing contract, users can approve it only once and can then make purchase in any contract that support such gateways.
 

@@ -138,17 +138,15 @@ abstract contract BaseERC20 is IERC20 {
 
     // /////////////////////////////////// STORAGE SLOTS /////////////////////////////////////////
 
-    /*immutable*/
-    uint256 internal _totalSupply;
-    uint256 internal _initialIndividualSupply;
+    uint256 internal immutable _totalSupply;
+    uint256 internal immutable _initialIndividualSupply;
     mapping(address => uint256) internal _balances;
     mapping(address => mapping(address => uint256)) internal _allowances;
 
     uint256 internal _supplyClaimed;
     mapping(address => bool) internal _claimed; // TODO optimize it by storing it in the same slot as _balances
 
-    /*immutable*/
-    address internal _gateway;
+    address internal immutable _gateway;
 
     // //////////////////////////////////// CONSTRUCTOR ///////////////////////////////////////////
     constructor(
