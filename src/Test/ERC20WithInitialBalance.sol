@@ -1,4 +1,6 @@
-pragma solidity 0.6.5;
+// SPDX-License-Identifier: MIT
+
+pragma solidity 0.7.3;
 
 import "./BaseERC20.sol";
 import "../Interfaces/ERC20With2612.sol";
@@ -9,11 +11,11 @@ contract ERC20WithInitialBalance is BaseERC20, ERC20With2612 {
         "Permit(address owner,address spender,uint256 value,uint256 nonce,uint256 deadline)"
     );
 
-    function DOMAIN_SEPARATOR() external override view returns (bytes32) {
+    function DOMAIN_SEPARATOR() external view override returns (bytes32) {
         return _DOMAIN_SEPARATOR;
     }
 
-    function nonces(address owner) external override view returns (uint256) {
+    function nonces(address owner) external view override returns (uint256) {
         return _nonces[owner];
     }
 
@@ -33,16 +35,7 @@ contract ERC20WithInitialBalance is BaseERC20, ERC20With2612 {
             abi.encodePacked(
                 "\x19\x01",
                 _DOMAIN_SEPARATOR,
-                keccak256(
-                    abi.encode(
-                        PERMIT_TYPEHASH,
-                        owner,
-                        spender,
-                        value,
-                        currentNonce,
-                        deadline
-                    )
-                )
+                keccak256(abi.encode(PERMIT_TYPEHASH, owner, spender, value, currentNonce, deadline))
             )
         );
         require(owner == ecrecover(digest, v, r, s), "INVALID_SIGNATURE");
@@ -65,13 +58,11 @@ contract ERC20WithInitialBalance is BaseERC20, ERC20With2612 {
         uint256 supply,
         uint256 initialIndividualSupply,
         address gateway
-    ) public BaseERC20(supply, initialIndividualSupply, gateway) {
+    ) BaseERC20(supply, initialIndividualSupply, gateway) {
         // TODO chainId
         _DOMAIN_SEPARATOR = keccak256(
             abi.encode(
-                keccak256(
-                    "EIP712Domain(string name,string version,address verifyingContract)"
-                ),
+                keccak256("EIP712Domain(string name,string version,address verifyingContract)"),
                 keccak256(bytes(name)),
                 keccak256(bytes("1")),
                 address(this)

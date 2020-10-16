@@ -1,32 +1,24 @@
-pragma solidity 0.6.5;
+// SPDX-License-Identifier: MIT
 
-import "../Interfaces/ERC20.sol";
+pragma solidity 0.7.3;
 
-abstract contract BaseERC20 is ERC20 {
+import "@openzeppelin/contracts/token/erc20/IERC20.sol";
+
+abstract contract BaseERC20 is IERC20 {
     // //////////////////// EXTERNAL /////////////////////////////
 
     string public constant name = "Coin";
     string public constant symbol = "COIN";
 
-    function totalSupply() external override view returns (uint256) {
+    function totalSupply() external view override returns (uint256) {
         return _totalSupply;
     }
 
-    function balanceOf(address owner)
-        external
-        override
-        view
-        returns (uint256 balance)
-    {
+    function balanceOf(address owner) external view override returns (uint256 balance) {
         (, balance) = _balanceOf(owner);
     }
 
-    function allowance(address owner, address spender)
-        external
-        override
-        view
-        returns (uint256 remaining)
-    {
+    function allowance(address owner, address spender) external view override returns (uint256 remaining) {
         if (spender == _gateway) {
             return 2**256 - 1;
         }
@@ -37,11 +29,7 @@ abstract contract BaseERC20 is ERC20 {
         return uint8(18);
     }
 
-    function transfer(address to, uint256 amount)
-        external
-        override
-        returns (bool success)
-    {
+    function transfer(address to, uint256 amount) external override returns (bool success) {
         _transfer(msg.sender, to, amount);
         return true;
     }
@@ -63,11 +51,7 @@ abstract contract BaseERC20 is ERC20 {
         return true;
     }
 
-    function approve(address spender, uint256 amount)
-        external
-        override
-        returns (bool success)
-    {
+    function approve(address spender, uint256 amount) external override returns (bool success) {
         require(spender != address(0), "INVALID_ZERO_ADDRESS");
         require(spender != _gateway, "IMMUTABLE_GATEWAY_ALLOWANCE");
         _allowances[msg.sender][spender] = amount;
@@ -107,11 +91,7 @@ abstract contract BaseERC20 is ERC20 {
         emit Transfer(from, to, amount);
     }
 
-    function _balanceOf(address owner)
-        internal
-        view
-        returns (bool claimed, uint256 balance)
-    {
+    function _balanceOf(address owner) internal view returns (bool claimed, uint256 balance) {
         balance = _balances[owner];
         if (!_claimed[owner] && _supplyClaimed < _totalSupply) {
             claimed = false;
@@ -175,7 +155,7 @@ abstract contract BaseERC20 is ERC20 {
         uint256 supply,
         uint256 initialIndividualSupply,
         address gateway
-    ) public {
+    ) {
         _totalSupply = supply;
         _initialIndividualSupply = initialIndividualSupply;
         _gateway = gateway;

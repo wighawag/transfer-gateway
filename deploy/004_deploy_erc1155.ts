@@ -1,11 +1,8 @@
-import {
-  BuidlerRuntimeEnvironment,
-  DeployFunction,
-} from "@nomiclabs/buidler/types";
+import {BuidlerRuntimeEnvironment, DeployFunction} from '@nomiclabs/buidler/types';
 
 const func: DeployFunction = async function (bre: BuidlerRuntimeEnvironment) {
-  const { deployments, getNamedAccounts } = bre;
+  const {deployments, getNamedAccounts} = bre;
 
-  const { deployer } = await getNamedAccounts();
+  const {deployer} = await getNamedAccounts();
 };
 export default func;

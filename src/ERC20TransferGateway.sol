@@ -1,50 +1,51 @@
-pragma solidity 0.6.5;
+// SPDX-License-Identifier: MIT
 
-import "./Interfaces/ERC20.sol";
+pragma solidity 0.7.3;
+
+import "@openzeppelin/contracts/token/erc20/IERC20.sol";
+import "@openzeppelin/contracts/token/erc20/SafeERC20.sol";
+import "@openzeppelin/contracts/utils/Address.sol";
 
 /* TODO is MetaTransactionReceiver */
 contract ERC20TransferGateway {
+    using SafeERC20 for IERC20;
+    using Address for address;
+
     function transferERC20AndCall(
-        ERC20 token,
+        IERC20 token,
         uint256 amount,
         address to,
         bytes calldata callData
-    ) external {
+    ) external payable returns (bytes memory) {
         address sender = msg.sender; // TODO use _msgSender() from MetaTransactionReceiver
-        _transferERC20(sender, token, amount, to);
-        _call(sender, token, amount, to, callData);
+        token.safeTransferFrom(sender, to, amount);
+        return _call(sender, token, amount, to, callData);
     }
 
-    //////////////////////////// INTERNAL /////////////////////////////
-    function _transferERC20(
-        address sender,
-        ERC20 token,
+    ///@notice to be called atomically after sending the tokens to the gateway
+    function forward(
+        IERC20 token,
         uint256 amount,
-        address to
-    ) internal {
-        require(
-            token.transferFrom(sender, to, amount),
-            "ERC20_TRANSFER_FAILED"
-        ); // TODO support non-standard ERC20
+        address to,
+        bytes calldata callData
+    ) external payable returns (bytes memory) {
+        address sender = msg.sender; // TODO use _msgSender() from MetaTransactionReceiver
+        token.safeTransfer(to, amount);
+        return _call(sender, token, amount, to, callData);
     }
+
+    // -------------------------------
+    // INTERNAL
+    // -------------------------------
 
     function _call(
         address sender,
-        ERC20 token,
+        IERC20 token,
         uint256 amount,
         address to,
-        bytes memory callData
-    ) internal {
-        (bool success, ) = to.call(
-            // append the transfer data with sender at the end (EIP-2771)
-            abi.encodePacked(callData, abi.encode(token, amount, sender))
-        );
-        if (!success) {
-            assembly {
-                let returnDataSize := returndatasize()
-                returndatacopy(0, 0, returnDataSize)
-                revert(0, returnDataSize)
-            }
-        }
+        bytes calldata callData
+    ) internal returns (bytes memory) {
+        bytes memory data = abi.encodePacked(callData, abi.encode(token, amount, sender));
+        return to.functionCallWithValue(data, msg.value);
     }
 }

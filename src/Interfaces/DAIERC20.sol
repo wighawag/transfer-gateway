@@ -1,8 +1,10 @@
-pragma solidity 0.6.5;
+// SPDX-License-Identifier: MIT
 
-import "./ERC20.sol";
+pragma solidity 0.7.3;
 
-interface DAIERC20 is ERC20 {
+import "@openzeppelin/contracts/token/erc20/IERC20.sol";
+
+interface DAIERC20 is IERC20 {
     function permit(
         address holder,
         address spender,

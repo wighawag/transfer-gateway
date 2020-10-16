@@ -1,13 +1,10 @@
-import {
-  BuidlerRuntimeEnvironment,
-  DeployFunction,
-} from "@nomiclabs/buidler/types";
+import {BuidlerRuntimeEnvironment, DeployFunction} from '@nomiclabs/buidler/types';
 
 const func: DeployFunction = async function (bre: BuidlerRuntimeEnvironment) {
-  const { deployments, getNamedAccounts } = bre;
-  const { deploy } = deployments;
+  const {deployments, getNamedAccounts} = bre;
+  const {deploy} = deployments;
 
-  const { deployer } = await getNamedAccounts();
+  const {deployer} = await getNamedAccounts();
 
   // await deploy("ERC721Token", {
   //   from: deployer,
@@ -15,4 +12,4 @@ const func: DeployFunction = async function (bre: BuidlerRuntimeEnvironment) {
   // });
 };
 export default func;
-func.tags = ["ERC721Token"];
+func.tags = ['ERC721Token'];
