@@ -22,13 +22,13 @@ describe('ERC20Consumer', function () {
   });
 
   it('calling it via erc20transfer gateway works', async function () {
-    const {ERC20Consumer, ERC20TransferGateway, ERC20Token, others} = await setup();
+    const {ERC20Consumer, ERC20TransferGateway, ERC20Token} = await setup();
     const {data, to} = await ERC20Consumer.populateTransaction.purchase(1);
     await ERC20TransferGateway.transferERC20AndCall(ERC20Token.address, '500000000000000000', to, data);
   });
 
   it('calling it via erc20transfer gateway but with wrong amount fails', async function () {
-    const {ERC20Consumer, ERC20TransferGateway, ERC20Token, others} = await setup();
+    const {ERC20Consumer, ERC20TransferGateway, ERC20Token} = await setup();
     const {data, to} = await ERC20Consumer.populateTransaction.purchase(1);
     await expect(
       ERC20TransferGateway.transferERC20AndCall(ERC20Token.address, '400000000000000000', to, data)
