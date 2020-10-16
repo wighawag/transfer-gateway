@@ -15,7 +15,8 @@
     "solc_0.7/",
     "LICENSE",
     "README.md",
-    "artifacts/ERC20TransferGateway.json"
+    "artifacts/ERC20TransferGateway.json",
+    "diagram_*"
   ],
   "devDependencies": {
     "@ethereum-waffle/chai": "^3.0.2",
