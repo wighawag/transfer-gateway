@@ -12,4 +12,4 @@ deployments/localhost_*
 
 .vscode/*
 !.vscode/settings.json.default
-solc_0.7/openzeppelin
+_lib

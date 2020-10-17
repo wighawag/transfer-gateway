@@ -2,7 +2,7 @@ import {expect} from './chai-setup';
 import {ethers, deployments, getUnnamedAccounts} from '@nomiclabs/buidler';
 
 const setup = deployments.createFixture(async () => {
-  await deployments.fixture();
+  await deployments.fixture('ERC20Consumer');
   const others = await getUnnamedAccounts();
   return {
     ERC20Consumer: await ethers.getContract('ERC20Consumer'),
