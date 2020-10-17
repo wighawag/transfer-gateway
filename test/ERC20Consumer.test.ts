@@ -8,8 +8,7 @@ const setup = deployments.createFixture(async () => {
     ERC20Consumer: await ethers.getContract('ERC20Consumer'),
     ERC20TransferGateway: await ethers.getContract('ERC20TransferGateway'),
     ERC20Token: await ethers.getContract('ERC20Token'),
-    others: ((others as unknown) as string[]).map((acc) => {
-      // TODO fix buidler-deploy type def
+    others: others.map((acc) => {
       return {address: acc};
     }),
   };
