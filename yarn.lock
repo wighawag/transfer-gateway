@@ -1940,10 +1940,10 @@ bufferutil@^4.0.1:
   dependencies:
     node-gyp-build "~3.7.0"
 
-buidler-deploy@^0.6.0-beta.32:
-  version "0.6.0-beta.32"
-  resolved "https://registry.yarnpkg.com/buidler-deploy/-/buidler-deploy-0.6.0-beta.32.tgz#44b6cb7fd4529a11e623c4ce05ee3a00c9858799"
-  integrity sha512-VI7hPNVCTqui6AHOFEuCZjvmAJcyzccBN6Y5eDxco0TpSx0bUf5IZ1e0fX9/Ld/rYtEYTb6cbffEuqGAKu62iQ==
+buidler-deploy@^0.6.0-beta.33:
+  version "0.6.0-beta.33"
+  resolved "https://registry.yarnpkg.com/buidler-deploy/-/buidler-deploy-0.6.0-beta.33.tgz#fdf454515b840fdede23d976ffe5d46bea1c1d2a"
+  integrity sha512-8t1ycVanQb11T85GrS9xJwyutHi5bABGbPmswhtdf7iq+rgXqjXwVWe1I0/vD+ODl3tRJa61eNkQt2/Wev32eA==
   dependencies:
     "@ethersproject/abi" "^5.0.2"
     "@ethersproject/abstract-signer" "^5.0.2"
