@@ -1,5 +1,5 @@
 import {expect} from './chai-setup';
-import {ethers, deployments, getUnnamedAccounts} from '@nomiclabs/buidler';
+import {ethers, deployments, getUnnamedAccounts} from 'hardhat';
 
 const setup = deployments.createFixture(async () => {
   await deployments.fixture('ERC20Consumer');
@@ -8,7 +8,7 @@ const setup = deployments.createFixture(async () => {
     ERC20Consumer: await ethers.getContract('ERC20Consumer'),
     ERC20TransferGateway: await ethers.getContract('ERC20TransferGateway'),
     ERC20Token: await ethers.getContract('ERC20Token'),
-    others: others.map((acc) => {
+    others: others.map((acc: string) => {
       return {address: acc};
     }),
   };

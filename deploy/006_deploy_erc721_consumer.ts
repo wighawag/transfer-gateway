@@ -1,7 +1,7 @@
-import {BuidlerRuntimeEnvironment, DeployFunction} from '@nomiclabs/buidler/types';
+import {HardhatRuntimeEnvironment, DeployFunction} from 'hardhat/types';
 
-const func: DeployFunction = async function (bre: BuidlerRuntimeEnvironment) {
-  const {deployments} = bre;
+const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
+  const {deployments} = hre;
 };
 
 export default func;

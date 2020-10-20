@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.7.3;
+pragma solidity 0.7.1;
 
-import "../../_lib/openzeppelin/contracts/token/erc20/IERC20.sol";
+import "../../_lib/openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 interface ERC20With2612 is IERC20 {
     function permit(

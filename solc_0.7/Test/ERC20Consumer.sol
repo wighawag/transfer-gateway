@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.7.3;
+pragma solidity 0.7.1;
 
 import "../BaseERC20TransferRecipient.sol";
-import "../../_lib/openzeppelin/contracts/token/erc20/IERC20.sol";
-import "../../_lib/openzeppelin/contracts/token/erc20/SafeERC20.sol";
+import "../../_lib/openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "../../_lib/openzeppelin/contracts/token/ERC20/SafeERC20.sol";
 
 contract ERC20Consumer is BaseERC20TransferRecipient {
     using SafeERC20 for IERC20;
