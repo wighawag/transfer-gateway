@@ -1,5 +1,5 @@
 coverage*
-#Buidler files
+#Hardhat files
 cache/
 artifacts/
 
@@ -7,8 +7,8 @@ node_modules/
 !test/node_modules/
 .env
 contractsInfo.json
-deployments/buidlerevm_*
-deployments/localhost_*
+deployments/hardhat
+deployments/localhost
 
 .vscode/*
 !.vscode/settings.json.default
