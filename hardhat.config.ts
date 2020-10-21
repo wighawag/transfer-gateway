@@ -2,8 +2,9 @@
 require('dotenv').config();
 import {Wallet} from '@ethersproject/wallet';
 import {HardhatUserConfig} from 'hardhat/types';
-import 'buidler-deploy';
+import 'hardhat-deploy';
 import 'buidler-ethers-v5';
+
 // usePlugin('solidity-coverage');
 
 let mnemonic = process.env.MNEMONIC;
