@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.7.1;
+pragma solidity 0.7.3;
 
 import "./BaseERC20.sol";
 import "../Interfaces/DAIERC20.sol";
