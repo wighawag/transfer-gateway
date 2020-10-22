@@ -3,7 +3,7 @@ require('dotenv').config();
 import {Wallet} from '@ethersproject/wallet';
 import {HardhatUserConfig} from 'hardhat/types';
 import 'hardhat-deploy';
-import 'buidler-ethers-v5';
+import 'hardhat-deploy-ethers';
 
 // usePlugin('solidity-coverage');
 
