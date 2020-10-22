@@ -5,6 +5,7 @@ pragma solidity 0.7.1;
 import "./BaseERC20.sol";
 import "../Interfaces/ERC20With2612.sol";
 
+///@notice test ERC20 token that give initial balance to all accounts that can claim it in time.
 contract ERC20WithInitialBalance is BaseERC20, ERC20With2612 {
     // TODO inject actual hash or use 0.6.12
     bytes32 internal constant PERMIT_TYPEHASH = keccak256(

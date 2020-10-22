@@ -7,6 +7,8 @@ import "../_lib/openzeppelin/contracts/token/ERC20/SafeERC20.sol";
 import "../_lib/openzeppelin/contracts/utils/Address.sol";
 
 /* TODO is MetaTransactionReceiver */
+
+///@notice Gateway that forwward payment information to the recipient.
 contract ERC20TransferGateway {
     using SafeERC20 for IERC20;
     using Address for address;
