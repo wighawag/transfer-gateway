@@ -1,5 +1,4 @@
 {
-  "todo-tree.filtering.excludeGlobs": ["export"],
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "[solidity]": {
@@ -8,7 +7,7 @@
   "solidity.linter": "solhint",
   "solidity.enableLocalNodeCompiler": false,
   "solidity.compileUsingRemoteVersion": "0.7.3+commit.9bfce1f6.Emscripten.clang",
-  "solidity.packageDefaultDependenciesContractsDirectory": "src",
+  "solidity.packageDefaultDependenciesContractsDirectory": "solc_0.7",
   "solidity.packageDefaultDependenciesDirectory": "node_modules",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
