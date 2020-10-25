@@ -1,12 +1,13 @@
 import 'dotenv/config';
-import {Wallet} from '@ethersproject/wallet';
 import {HardhatUserConfig} from 'hardhat/types';
 import 'hardhat-deploy';
 import 'hardhat-deploy-ethers';
 
 let mnemonic = process.env.MNEMONIC;
 if (!mnemonic) {
-  mnemonic = Wallet.createRandom().mnemonic.phrase;
+  // FOR DEV ONLY, USE .env FOR EXTERNAL NETWORKS
+  // (IT IS IMPORTANT TO HAVE A NON RANDOM MNEMONIC SO THAT SCRIPTS CAN ACT ON THE SAME ACCOUNTS)
+  mnemonic = 'present annual fetch tiger fabric regret ostrich drum clay sell deny couple';
 }
 const accounts = {
   mnemonic,
