@@ -1,11 +1,8 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-require('dotenv').config();
+import 'dotenv/config';
 import {Wallet} from '@ethersproject/wallet';
 import {HardhatUserConfig} from 'hardhat/types';
 import 'hardhat-deploy';
 import 'hardhat-deploy-ethers';
-
-// usePlugin('solidity-coverage');
 
 let mnemonic = process.env.MNEMONIC;
 if (!mnemonic) {
@@ -38,7 +35,7 @@ const config: HardhatUserConfig = {
       url: 'https://rinkeby.infura.io/v3/' + process.env.INFURA_TOKEN,
       accounts,
     },
-    42: {
+    kovan: {
       url: 'https://kovan.infura.io/v3/' + process.env.INFURA_TOKEN,
       accounts,
     },
