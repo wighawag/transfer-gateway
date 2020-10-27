@@ -1,15 +1,18 @@
-coverage*
-#Hardhat files
 cache/
 artifacts/
 
-node_modules/
-!test/node_modules/
-.env
-contractsInfo.json
-deployments/hardhat
-deployments/localhost
+_lib
+
+coverage*
 
 .vscode/*
 !.vscode/settings.json.default
-_lib
+!.vscode/launch.json.default
+!.vscode/extensions.json.default
+
+node_modules/
+.env
+
+contractsInfo.json
+deployments/hardhat
+deployments/localhost
