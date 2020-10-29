@@ -16,7 +16,7 @@
     "solc_0.7/",
     "LICENSE",
     "README.md",
-    "export/artifacts/ERC20TransferGateway.json",
+    "export/artifacts/",
     "export/deploy/001_deploy_transfer_gateway.js",
     "diagram_*"
   ],
