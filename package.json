@@ -60,7 +60,7 @@
     "coverage": "cross-env HARDHAT_DEPLOY_FIXTURE=true --network coverage coverage",
     "dev": "hardhat node --reset --watch --export contractsInfo.json",
     "compile": "hardhat compile",
-    "export": "tsc -p tsconfig.deploy.json && hardhat export-artifacts export/artifacts",
+    "export": "tsc -p tsconfig.deploy.json && hardhat export-artifacts export/artifacts --include ERC20TransferGateway",
     "local:dev": "hardhat --network localhost deploy --watch",
     "local:deploy": "hardhat --network localhost deploy",
     "local:run": "cross-env HARDHAT_NETWORK=localhost ts-node --files",
