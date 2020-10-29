@@ -16,3 +16,11 @@ node_modules/
 contractsInfo.json
 deployments/hardhat
 deployments/localhost
+
+export/*
+!export/artifacts
+export/artifacts/*
+!export/artifacts/ERC20TransferGateway.json
+!export/deploy
+export/deploy/*
+!export/deploy/001_deploy_transfer_gateway.js

@@ -1,5 +1,5 @@
 {
-  "name": "transfer-gateway",
+  "name": "ethereum-transfer-gateway",
   "version": "0.1.0",
   "description": "Ethhereum Transfer Gateway to Receiver Token without prior Approval",
   "repository": "github:wighawag/transfer-gateway",
@@ -16,7 +16,8 @@
     "solc_0.7/",
     "LICENSE",
     "README.md",
-    "artifacts/ERC20TransferGateway.json",
+    "export/artifacts/ERC20TransferGateway.json",
+    "export/deploy/001_deploy_transfer_gateway.js",
     "diagram_*"
   ],
   "resolutions": {
@@ -39,7 +40,7 @@
     "ethers": "^5.0.17",
     "fs-extra": "^9.0.1",
     "hardhat": "^2.0.1",
-    "hardhat-deploy": "^0.7.0-beta.18",
+    "hardhat-deploy": "^0.7.0-beta.22",
     "hardhat-deploy-ethers": "^0.3.0-beta.5",
     "mocha": "^8.1.1",
     "prettier": "^2.0.5",
@@ -59,6 +60,7 @@
     "coverage": "cross-env HARDHAT_DEPLOY_FIXTURE=true --network coverage coverage",
     "dev": "hardhat node --reset --watch --export contractsInfo.json",
     "compile": "hardhat compile",
+    "export": "tsc -p tsconfig.deploy.json && hardhat export-artifacts export/artifacts",
     "local:dev": "hardhat --network localhost deploy --watch",
     "local:deploy": "hardhat --network localhost deploy",
     "local:run": "cross-env HARDHAT_NETWORK=localhost ts-node --files",
