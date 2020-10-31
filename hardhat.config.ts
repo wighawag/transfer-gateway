@@ -20,6 +20,7 @@ const config: HardhatUserConfig = {
     gasPrice: 100,
     enabled: process.env.REPORT_GAS ? true : false,
     coinmarketcap: process.env.COINMARKETCAP_API_KEY,
+    maxMethodDiff: 10,
   },
   solidity: {
     version: '0.7.3',
