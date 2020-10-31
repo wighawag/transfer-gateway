@@ -35,4 +35,7 @@ jobs:
         run: yarn format
 
       - name: Running tests
-        run: yarn test
+        run: yarn gas
+
+      - name: Codechecks
+        run: npx codechecks

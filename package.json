@@ -24,6 +24,7 @@
     "websocket": "1.0.32"
   },
   "devDependencies": {
+    "@codechecks/client": "^0.1.10",
     "@ethereum-waffle/chai": "^3.0.2",
     "@ethersproject/wallet": "^5.0.5",
     "@openzeppelin/contracts": "^3.2.1-solc-0.7",
@@ -59,7 +60,7 @@
     "format": "prettier --check \"**/*.{ts,js,sol}\"",
     "format:fix": "prettier --write \"**/*.{ts,js,sol}\"",
     "test": "cross-env HARDHAT_DEPLOY_FIXTURE=true HARDHAT_COMPILE=true mocha --bail --recursive test",
-    "gas": "cross-env REPORT_GAS=true hardhat test --deploy-fixture",
+    "gas": "cross-env REPORT_GAS=true hardhat test",
     "coverage": "cross-env HARDHAT_DEPLOY_FIXTURE=true --network coverage coverage",
     "dev": "hardhat node --reset --watch --export contractsInfo.json",
     "compile": "hardhat compile",
