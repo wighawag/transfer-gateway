@@ -2,6 +2,7 @@ import 'dotenv/config';
 import {HardhatUserConfig} from 'hardhat/types';
 import 'hardhat-deploy';
 import 'hardhat-deploy-ethers';
+import 'hardhat-gas-reporter';
 
 let mnemonic = process.env.MNEMONIC;
 if (!mnemonic) {
@@ -14,6 +15,12 @@ const accounts = {
 };
 
 const config: HardhatUserConfig = {
+  gasReporter: {
+    currency: 'USD',
+    gasPrice: 100,
+    enabled: process.env.REPORT_GAS ? true : false,
+    coinmarketcap: process.env.COINMARKETCAP_API_KEY,
+  },
   solidity: {
     version: '0.7.3',
   },
