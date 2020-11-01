@@ -24,6 +24,11 @@ contract ERC20Consumer is BaseERC20TransferRecipient {
         _price = price;
     }
 
+    uint256 _f1;
+    uint256 _f2;
+    uint256 _f3;
+    uint256 _f4;
+
     function purchase(uint256 id) external {
         purchaseFor(address(0), id);
     }
@@ -36,6 +41,10 @@ contract ERC20Consumer is BaseERC20TransferRecipient {
         } else {
             _token.safeTransferFrom(sender, address(this), _price);
         }
+        _f1 = 1;
+        _f2 = 2;
+        _f3 = 3;
+        _f4 = 4;
 
         // at this point the purchase has been paid and `sender` is the purchaser
         if (recipient == address(0)) {
