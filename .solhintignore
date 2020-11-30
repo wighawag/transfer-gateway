@@ -4,3 +4,4 @@ artifacts/
 cache/
 coverage/
 node_modules/
+src/solc_0.5.12

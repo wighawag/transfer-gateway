@@ -22,3 +22,4 @@ export/*
 !export/deploy
 export/deploy/*
 !export/deploy/001_deploy_transfer_gateway.js
+failing_metadata/
