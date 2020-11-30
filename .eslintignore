@@ -6,3 +6,5 @@ coverage/
 node_modules/
 package.json
 _lib/
+src/solc_0.5.12
+failing_metadata/
