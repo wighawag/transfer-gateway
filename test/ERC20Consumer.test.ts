@@ -1,8 +1,14 @@
 import {expect} from './chai-setup';
-import {ethers, deployments, getUnnamedAccounts} from 'hardhat';
+import hre from 'hardhat';
+import deployERC20 from './deploy/deploy_erc20';
+import deployERC20Comsumer from './deploy/deploy_erc20_consumer';
+
+const {ethers, deployments, getUnnamedAccounts} = hre;
 
 const setup = deployments.createFixture(async () => {
-  await deployments.fixture('ERC20Consumer');
+  await deployments.fixture(['ERC20TransferGateway', 'DAI']);
+  await deployERC20(hre);
+  await deployERC20Comsumer(hre);
   const others = await getUnnamedAccounts();
   return {
     ERC20Consumer: await ethers.getContract('ERC20Consumer'),
