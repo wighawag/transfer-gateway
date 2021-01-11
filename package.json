@@ -1,6 +1,6 @@
 {
   "name": "ethereum-transfer-gateway",
-  "version": "0.1.0-beta.2",
+  "version": "0.1.0-beta.3",
   "description": "Ethhereum Transfer Gateway to Receiver Token without prior Approval",
   "repository": "github:wighawag/transfer-gateway",
   "author": "wighawag",
