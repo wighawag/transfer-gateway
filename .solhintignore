@@ -3,5 +3,6 @@ deployments/
 artifacts/
 cache/
 coverage/
+typechain/
 node_modules/
 src/solc_0.5.12
