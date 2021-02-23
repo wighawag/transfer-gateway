@@ -18,7 +18,7 @@ contract ERC20TransferGateway {
     ///@notice this transfers the tokens to the destination and call the function (callData).
     /// The information (sender, token, amount) is appended to the function call.
     /// This allows the recipient contract to keep using normal solidity functions (abi-encoded).
-    function transferERC20AndCall(
+    function transferAndCall(
         IERC20 token,
         uint256 amount,
         address to,
