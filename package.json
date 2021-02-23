@@ -68,6 +68,7 @@
     "test": "cross-env HARDHAT_DEPLOY_FIXTURE=true HARDHAT_COMPILE=true mocha --bail --recursive test",
     "gas": "cross-env REPORT_GAS=true hardhat test",
     "coverage": "cross-env HARDHAT_DEPLOY_FIXTURE=true hardhat coverage",
+    "update-readme": "node ./.update-readme.js",
     "dev": "hardhat node --reset --watch --export contractsInfo.json",
     "export": "tsc -p tsconfig.deploy.json && hardhat export-artifacts export/artifacts --include ERC20TransferGateway",
     "local:dev": "hardhat --network localhost deploy --watch",
