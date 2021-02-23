@@ -3,6 +3,7 @@ deployments/
 artifacts/
 cache/
 coverage/
+typechain/
 node_modules/
 package.json
 _lib/
