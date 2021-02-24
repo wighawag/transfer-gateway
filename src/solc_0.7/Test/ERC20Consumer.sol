@@ -16,7 +16,7 @@ contract ERC20Consumer is BaseERC20TransferRecipient {
     event Purchase(address buyer, address recipient, uint256 id);
 
     constructor(
-        ERC20TransferGateway erc20TransferGateway,
+        address erc20TransferGateway,
         address token,
         uint256 price
     ) BaseERC20TransferRecipient(erc20TransferGateway) {
