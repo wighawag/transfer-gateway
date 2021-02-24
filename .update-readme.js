@@ -16,7 +16,7 @@ const excludes = [
 let result = `
 ## Test Coverage
 
-| OK  | File | Statements |     | Functions |     | Branches |     | Lines |     |
+|     | File | Statements |     | Functions |     | Branches |     | Lines |     |
 | :-: | ---: | ---------: | --: | --------: | --: | -------: | --: | ----: | --: |
 `;
 
