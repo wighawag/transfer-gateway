@@ -3,9 +3,9 @@
 pragma solidity 0.7.3;
 
 import "./BaseERC20.sol";
-import "../Interfaces/DAIERC20.sol";
+import "../Interfaces/IDAIERC20.sol";
 
-contract DAIWithInitialBalance is BaseERC20, DAIERC20 {
+contract DAIWithInitialBalance is BaseERC20, IDAIERC20 {
     // bytes32 public constant PERMIT_TYPEHASH = keccak256("Permit(address holder,address spender,uint256 nonce,uint256 expiry,bool allowed)");
     bytes32 internal constant PERMIT_TYPEHASH = 0xea2aa0a1be11a07ed86d755c93467f4f82362b452371d1ba94d1715123511acb;
 

@@ -4,7 +4,7 @@ pragma solidity 0.7.3;
 
 import "../../../_lib/openzeppelin/contracts/token/ERC20/IERC20.sol";
 
-interface DAIERC20 is IERC20 {
+interface IDAIERC20 is IERC20 {
     function permit(
         address holder,
         address spender,

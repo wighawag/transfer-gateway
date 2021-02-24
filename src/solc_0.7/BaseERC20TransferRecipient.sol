@@ -2,14 +2,10 @@
 
 pragma solidity ^0.7.0;
 
-import "./ERC20TransferGateway.sol";
-import "../../_lib/openzeppelin/contracts/token/ERC20/IERC20.sol";
-import "../../_lib/openzeppelin/contracts/token/ERC20/SafeERC20.sol";
-
 abstract contract BaseERC20TransferRecipient {
-    ERC20TransferGateway internal immutable _erc20TransferGateway;
+    address internal immutable _erc20TransferGateway;
 
-    constructor(ERC20TransferGateway erc20TransferGateway) {
+    constructor(address erc20TransferGateway) {
         _erc20TransferGateway = erc20TransferGateway;
     }
 
@@ -23,7 +19,7 @@ abstract contract BaseERC20TransferRecipient {
         )
     {
         sender = msg.sender;
-        if (sender == address(_erc20TransferGateway)) {
+        if (sender == _erc20TransferGateway) {
             return _extractTokenTransfer(msg.data);
         }
     }
