@@ -1,6 +1,6 @@
 {
   "name": "ethereum-transfer-gateway",
-  "version": "0.1.0-beta.5",
+  "version": "0.1.0-beta.6",
   "description": "Ethhereum Transfer Gateway to Receiver Token without prior Approval",
   "repository": "github:wighawag/transfer-gateway",
   "author": "wighawag",
@@ -13,7 +13,7 @@
   ],
   "files": [
     "_lib",
-    "solc_0.7/",
+    "src/solc_0.7/",
     "LICENSE",
     "README.md",
     "export/artifacts/",
