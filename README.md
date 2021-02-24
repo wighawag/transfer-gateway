@@ -4,13 +4,13 @@ _Another way to solve the two step approve and transfer process_
 
 Transfer gateways are intermediary contract that make the transfer to the destination contract before calling the contract.
 
-They can be pre-approved globally as immutable address from the ERC20 contract (see \_gateway in [solc_0.7/Test/BaseERC20.sol](solc_0.7/Test/BaseERC20.sol)) so ERC20 contract can benefit from it without requiring user confirmation.
+They can be pre-approved globally as immutable address from the ERC20 contract (see \_gateway in [src/solc_0.7/Test/BaseERC20.sol](src/solc_0.7/Test/BaseERC20.sol)) so ERC20 contract can benefit from it without requiring user confirmation.
 
 Alternatively for existing contract, users can approve it only once and can then make purchase in any contract that support such gateways.
 
-This technic is not exclusive to ERC20 and can be used for other contract types.
+This technic is not exclusive to ERC20 and can this repo also includes an ERC721 version.
 
-I am planning to make an ERC721Gateway that support the transfer of multiple ERC721 (from different token contract). use case : https://mystery.market so we can deploy new sale contract without every time requiring approval for transferring ERC721 into it.
+Use case : https://mystery.market so we can deploy new sales contract without every time requiring approval for transferring ERC721 into it.
 
 ## How it works
 
@@ -58,13 +58,14 @@ sequenceDiagram
 	TransferGateway->>SaleContract: purchase(id)+apendedData(token,amount,sender)
 ```
 -->
+
 <!--BEGIN_TEST_COVERAGE_SUMMARY-->
 
 ## Test Coverage
 
-|     | File | Statements |     | Functions |     | Branches |     | Lines |     |
-| :-: | :--- | ---------: | --: | --------: | --: | -------: | --: | ----: | --: |
-| :exclamation: | [ERC20TransferGateway.sol](src/solc_0.7/ERC20TransferGateway.sol) | 35.29% | 6/17 | 50% | 3/6 | - | - | 35.29% | 6/17 |
-| :exclamation: | [ERC721TransferGateway.sol](src/solc_0.7/ERC721TransferGateway.sol) | 0% | 0/13 | 0% | 0/4 | - | - | 0% | 0/13 |
+|               | File                                                                | Statements |      | Functions |     | Branches |     |  Lines |      |
+| :-----------: | :------------------------------------------------------------------ | ---------: | ---: | --------: | --: | -------: | --: | -----: | ---: |
+| :exclamation: | [ERC20TransferGateway.sol](src/solc_0.7/ERC20TransferGateway.sol)   |     35.29% | 6/17 |       50% | 3/6 |        - |   - | 35.29% | 6/17 |
+| :exclamation: | [ERC721TransferGateway.sol](src/solc_0.7/ERC721TransferGateway.sol) |         0% | 0/13 |        0% | 0/4 |        - |   - |     0% | 0/13 |
 
 <!--END_TEST_COVERAGE_SUMMARY-->
