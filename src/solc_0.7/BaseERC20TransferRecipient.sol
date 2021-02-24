@@ -2,9 +2,6 @@
 
 pragma solidity ^0.7.0;
 
-import "../../_lib/openzeppelin/contracts/token/ERC20/IERC20.sol";
-import "../../_lib/openzeppelin/contracts/token/ERC20/SafeERC20.sol";
-
 abstract contract BaseERC20TransferRecipient {
     address internal immutable _erc20TransferGateway;
 
