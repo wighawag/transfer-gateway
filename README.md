@@ -8,7 +8,7 @@ They can be pre-approved globally as immutable address from the ERC20 contract (
 
 Alternatively for existing contract, users can approve it only once and can then make purchase in any contract that support such gateways.
 
-This technic is not exclusive to ERC20 and can this repo also includes an ERC721 version.
+This technique is not exclusive to ERC20 and this repo also includes an ERC721 version.
 
 Use case : https://mystery.market so we can deploy new sales contract without every time requiring approval for transferring ERC721 into it.
 
