@@ -2,24 +2,22 @@
 const fs = require('fs-extra');
 const slash = require('slash');
 const path = require('path');
-const {stat} = require('fs');
 
 const summary = JSON.parse(
   fs.readFileSync(`coverage/coverage-summary.json`).toString()
 );
 
-const excludes = [];
-// [
-//   'src/solc_0.5.12',
-//   'src/solc_0.7/Test',
-//   'src/solc_0.7/Interfaces',
-//   'src/solc_0.7/BaseERC20TransferRecipient.sol',
-// ];
+const excludes = [
+  'src/solc_0.5.12',
+  'src/solc_0.7/Test',
+  'src/solc_0.7/Interfaces',
+  'src/solc_0.7/BaseERC20TransferRecipient.sol',
+];
 let result = `
 ## Test Coverage
 
-  | OK                 | File      | Statements |        | Branches |        | Functions |        | Lines |        |
-  | :----------------- | :-------- | :--------- | :----: | :------- | :----- | :-------- | ------ | ----- | ------ |
+| OK  | File | Statements |     | Branches |     | Functions |     | Lines |     |
+| :-: | ---: | ---------: | --: | -------: | --: | --------: | --: | ----: | --: |
 `;
 
 for (const key of Object.keys(summary)) {
@@ -52,7 +50,7 @@ for (const key of Object.keys(summary)) {
   }
 
   result +=
-    `| ${mark} | ${name} | ${statements.pct} | ${statements.covered}/${statements.total} | ${data.functions.pct} | ${data.functions.covered}/${data.functions.total} | ${data.branches.pct} | ${data.branches.covered}/${data.branches.total} | ${data.lines.pct} | ${data.lines.covered}/${data.lines.total} |` +
+    `| ${mark} | ${name} | ${statements.pct}% | ${statements.covered}/${statements.total} | ${data.functions.pct}% | ${data.functions.covered}/${data.functions.total} | ${data.branches.pct}% | ${data.branches.covered}/${data.branches.total} | ${data.lines.pct}% | ${data.lines.covered}/${data.lines.total} |` +
     '\n';
 }
 let readme = fs.readFileSync('README.md').toString();
