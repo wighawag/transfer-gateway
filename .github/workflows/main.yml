@@ -3,6 +3,7 @@ on: push
 jobs:
   test:
     runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, 'Automated publish')"
     steps:
       - uses: actions/checkout@v1
         with:
@@ -41,3 +42,18 @@ jobs:
         env:
           CC_SECRET: ${{ secrets.CC_SECRET }}
         run: npx codechecks
+
+      # coverage
+      - name: Running coverage
+        run: yarn coverage
+
+      - name: update coverage report in README
+        run: yarn update-readme
+
+      - name: Set Branch Name For Publish Step
+        run: echo "BRANCH_NAME=${GITHUB_REF##*/}" >> $GITHUB_ENV
+
+      - name: Commit and Push new README.md to the repository
+        uses: mikeal/publish-to-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
