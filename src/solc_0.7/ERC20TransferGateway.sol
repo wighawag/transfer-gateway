@@ -6,6 +6,35 @@ import "../../_lib/openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "../../_lib/openzeppelin/contracts/token/ERC20/SafeERC20.sol";
 import "../../_lib/openzeppelin/contracts/utils/Address.sol";
 
+interface IDaiPermit {
+    function permit(
+        address holder,
+        address spender,
+        uint256 nonce,
+        uint256 expiry,
+        bool allowed,
+        uint8 v,
+        bytes32 r,
+        bytes32 s
+    ) external;
+}
+
+interface IERC2612 {
+    function permit(
+        address owner,
+        address spender,
+        uint256 value,
+        uint256 deadline,
+        uint8 v,
+        bytes32 r,
+        bytes32 s
+    ) external;
+
+    function nonces(address owner) external view returns (uint256);
+
+    function DOMAIN_SEPARATOR() external view returns (bytes32);
+}
+
 ///@notice Gateway that forwward payment information to the destination and call it.
 /// This allow the receiver to know the payer, token and amount received.
 /// As the gateway append data to the call, contracts can continue using normal solidity functions (abi-encoded).
@@ -25,6 +54,47 @@ contract ERC20TransferGateway {
         bytes calldata callData
     ) external payable returns (bytes memory) {
         address sender = _msgSender();
+        token.safeTransferFrom(sender, to, amount);
+        return _call(sender, token, amount, to, callData);
+    }
+
+    ///@notice this call permit (dai version) and transfers the tokens to the destination and call the function (callData).
+    /// The information (sender, token, amount) is appended to the function call.
+    /// This allows the recipient contract to keep using normal solidity functions (abi-encoded).
+    function daiPermitTransferAndCall(
+        IERC20 token,
+        uint256 nonce,
+        uint256 expiry,
+        uint8 v,
+        bytes32 r,
+        bytes32 s,
+        uint256 amount,
+        address to,
+        bytes calldata callData
+    ) external payable returns (bytes memory) {
+        address sender = _msgSender();
+        IDaiPermit(address(token)).permit(sender, address(this), nonce, expiry, true, v, r, s);
+        token.safeTransferFrom(sender, to, amount);
+        return _call(sender, token, amount, to, callData);
+    }
+
+    // address owner, address spender, uint value, uint deadline, uint8 v, bytes32 r, bytes32 s
+    ///@notice this call permit (ERC2612 version) and transfers the tokens to the destination and call the function (callData).
+    /// The information (sender, token, amount) is appended to the function call.
+    /// This allows the recipient contract to keep using normal solidity functions (abi-encoded).
+    function permitTransferAndCall(
+        IERC20 token,
+        uint256 permitValue,
+        uint256 deadline,
+        uint8 v,
+        bytes32 r,
+        bytes32 s,
+        uint256 amount,
+        address to,
+        bytes calldata callData
+    ) external payable returns (bytes memory) {
+        address sender = _msgSender();
+        IERC2612(address(token)).permit(sender, address(this), permitValue, deadline, v, r, s);
         token.safeTransferFrom(sender, to, amount);
         return _call(sender, token, amount, to, callData);
     }
