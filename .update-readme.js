@@ -16,8 +16,8 @@ const excludes = [
 let result = `
 ## Test Coverage
 
-| OK  | File | Statements |     | Branches |     | Functions |     | Lines |     |
-| :-: | ---: | ---------: | --: | -------: | --: | --------: | --: | ----: | --: |
+| OK  | File | Statements |     | Functions |     | Branches |     | Lines |     |
+| :-: | ---: | ---------: | --: | --------: | --: | -------: | --: | ----: | --: |
 `;
 
 for (const key of Object.keys(summary)) {
@@ -49,8 +49,20 @@ for (const key of Object.keys(summary)) {
     mark = ':heavy_check_mark:';
   }
 
+  console.log(data);
+
   result +=
-    `| ${mark} | ${name} | ${statements.pct}% | ${statements.covered}/${statements.total} | ${data.functions.pct}% | ${data.functions.covered}/${data.functions.total} | ${data.branches.pct}% | ${data.branches.covered}/${data.branches.total} | ${data.lines.pct}% | ${data.lines.covered}/${data.lines.total} |` +
+    `| ${mark} | [${name}](${filepath}) | ${statements.pct}% | ${
+      statements.covered
+    }/${statements.total} | ${data.functions.pct}% | ${
+      data.functions.covered
+    }/${data.functions.total} | ${
+      data.branches.total > 0 ? `${data.branches.pct}%` : '-'
+    } | ${
+      data.branches.total > 0
+        ? `${data.branches.covered}/${data.branches.total}`
+        : '-'
+    } | ${data.lines.pct}% | ${data.lines.covered}/${data.lines.total} |` +
     '\n';
 }
 let readme = fs.readFileSync('README.md').toString();
