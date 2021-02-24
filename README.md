@@ -63,7 +63,7 @@ sequenceDiagram
 ## Test Coverage
 
 |     | File | Statements |     | Functions |     | Branches |     | Lines |     |
-| :-: | ---: | ---------: | --: | --------: | --: | -------: | --: | ----: | --: |
+| :-: | :--- | ---------: | --: | --------: | --: | -------: | --: | ----: | --: |
 | :warning: | [ERC20TransferGateway.sol](src/solc_0.7/ERC20TransferGateway.sol) | 66.67% | 6/9 | 75% | 3/4 | - | - | 66.67% | 6/9 |
 | :exclamation: | [ERC721TransferGateway.sol](src/solc_0.7/ERC721TransferGateway.sol) | 0% | 0/13 | 0% | 0/4 | - | - | 0% | 0/13 |
 
