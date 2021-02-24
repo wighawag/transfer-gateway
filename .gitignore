@@ -26,5 +26,6 @@ export/*
 !export/artifacts
 !export/deploy
 export/deploy/*
-!export/deploy/001_deploy_transfer_gateway.js
+!export/deploy/001_deploy_erc20_transfer_gateway.js
+!export/deploy/002_deploy_erc721_transfer_gateway.js
 failing_metadata/
