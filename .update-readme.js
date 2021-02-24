@@ -17,7 +17,7 @@ let result = `
 ## Test Coverage
 
 |     | File | Statements |     | Functions |     | Branches |     | Lines |     |
-| :-: | ---: | ---------: | --: | --------: | --: | -------: | --: | ----: | --: |
+| :-: | :--- | ---------: | --: | --------: | --: | -------: | --: | ----: | --: |
 `;
 
 for (const key of Object.keys(summary)) {
