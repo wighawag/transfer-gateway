@@ -62,18 +62,9 @@ sequenceDiagram
 
 ## Test Coverage
 
-  | OK                 | File      | Statements |        | Branches |        | Functions |        | Lines |        |
-  | :----------------- | :-------- | :--------- | :----: | :------- | :----- | :-------- | ------ | ----- | ------ |
-| :exclamation: | Dai.sol | 5 | 2/40 | 6.25 | 1/16 | 0 | 0/26 | 4.88 | 2/41 |
-| :heavy_check_mark: | BaseERC20TransferRecipient.sol | 100 | 5/5 | 100 | 3/3 | 100 | 2/2 | 100 | 6/6 |
-| :warning: | ERC20TransferGateway.sol | 66.67 | 6/9 | 75 | 3/4 | 100 | 0/0 | 66.67 | 6/9 |
-| :exclamation: | ERC721TransferGateway.sol | 0 | 0/13 | 0 | 0/4 | 100 | 0/0 | 0 | 0/13 |
-| :heavy_check_mark: | DAIERC20.sol | 100 | 0/0 | 100 | 0/0 | 100 | 0/0 | 100 | 0/0 |
-| :heavy_check_mark: | ERC20With2612.sol | 100 | 0/0 | 100 | 0/0 | 100 | 0/0 | 100 | 0/0 |
-| :warning: | BaseERC20.sol | 60.47 | 26/43 | 40 | 4/10 | 45.83 | 11/24 | 60.47 | 26/43 |
-| :exclamation: | DAIWithInitialBalance.sol | 9.09 | 1/11 | 25 | 1/4 | 0 | 0/8 | 9.09 | 1/11 |
-| :heavy_check_mark: | ERC20Consumer.sol | 100 | 11/11 | 100 | 3/3 | 75 | 6/8 | 100 | 11/11 |
-| :exclamation: | ERC20WithInitialBalance.sol | 0 | 0/11 | 0 | 0/4 | 0 | 0/6 | 0 | 0/11 |
-| :heavy_check_mark: | NFTConsumer.sol | 100 | 0/0 | 100 | 0/0 | 100 | 0/0 | 100 | 0/0 |
+| OK  | File | Statements |     | Branches |     | Functions |     | Lines |     |
+| :-: | ---: | ---------: | --: | -------: | --: | --------: | --: | ----: | --: |
+| :warning: | ERC20TransferGateway.sol | 66.67% | 6/9 | 75% | 3/4 | 100% | 0/0 | 66.67% | 6/9 |
+| :exclamation: | ERC721TransferGateway.sol | 0% | 0/13 | 0% | 0/4 | 100% | 0/0 | 0% | 0/13 |
 
 <!--END_TEST_COVERAGE_SUMMARY-->
