@@ -9,6 +9,7 @@ const summary = JSON.parse(
 
 const excludes = [
   'src/solc_0.5.12',
+  'src/solc_0.8',
   'src/solc_0.7/Test',
   'src/solc_0.7/Interfaces',
   'src/solc_0.7/BaseERC20TransferRecipient.sol',
